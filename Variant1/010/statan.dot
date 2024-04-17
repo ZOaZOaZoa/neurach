@@ -1,0 +1,12 @@
+digraph statan {
+  graph [ rankdir = LR ] ;
+  node [ shape = record ] ;
+
+  series1:out -> statistics:signal ;
+  series1 [
+    label="series1|{{<out>out}}"
+  ] ;
+  statistics [
+    label="statistics|{{<signal>signal}|{<stat>stat}}"
+  ] ;
+}

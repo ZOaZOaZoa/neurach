@@ -1,0 +1,14 @@
+Logging started.
+Digraph output will be put to 'statan.dot'
+ statan: series1.out -> statistics.signal
+ statan: + series1 node
+ statan: + statistics node
+Text stream input data file 'C:/nn/labworks/Variant1/002/n.dat'
+## pass 1
+## pass 1 ==> total dim 12
+## pass 2
+## pass 2 ==> total dim 12
+IMPORTANT: net is dead due to data are exhausted.
+Statistics of node 'statistics':
+       Min        Max         Mean     StdDev Dispersion        RMS Volume
+         0          0            0          0          0          0 1000

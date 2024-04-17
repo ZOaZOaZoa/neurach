@@ -1,0 +1,150 @@
+digraph nncfl {
+  graph [ rankdir = LR ] ;
+  node [ shape = record ] ;
+
+  setpnt_inp:out -> bus3_c:in1 ;
+  setpnt_inp [
+    label="setpnt_inp|{{<out>out}}"
+  ] ;
+  bus3_c [
+    label="bus3_c|{{<in1>in1|<in2>in2|<in3>in3}|{<out>out}}"
+  ] ;
+  setpnt_inp:out -> skip_r:in ;
+  skip_r [
+    label="skip_r|{{<in>in}|{<out>out|<sync>sync}}"
+  ] ;
+  setpnt_inp:out -> cerrcomp:main ;
+  cerrcomp [
+    label="cerrcomp|{{<main>main|<aux>aux}|{<cmp>cmp}}"
+  ] ;
+  skip_r:out -> devcomp:main ;
+  devcomp [
+    label="devcomp|{{<main>main|<aux>aux}|{<cmp>cmp}}"
+  ] ;
+  devcomp:cmp -> bus3_c:in2 ;
+  devcomp:cmp -> err_acc:in ;
+  err_acc [
+    label="err_acc|{{<in>in}|{<sum>sum}}"
+  ] ;
+  err_acc:sum -> bus3_c:in3 ;
+  bus3_c:out -> nncontr:x ;
+  nncontr [
+    label="nncontr|{{<x>x}|{<y>y}}"
+  ] ;
+  bus3_c:out -> c_in:in ;
+  c_in [
+    label="c_in|{{<in>in}}"
+  ] ;
+  nncontr:y -> nn_u:in ;
+  nn_u [
+    label="nn_u|{{<in>in}|{<out>out}}"
+  ] ;
+  nn_u:out -> plant:x ;
+  plant [
+    label="plant|{{<x>x|<time>time}|{<y>y}}"
+  ] ;
+  plant:y -> sum_on:main ;
+  sum_on [
+    label="sum_on|{{<main>main|<aux>aux}|{<sum>sum}}"
+  ] ;
+  noise_inp:out -> sum_on:aux ;
+  noise_inp [
+    label="noise_inp|{{<out>out}}"
+  ] ;
+  sum_on:sum -> on_y:in ;
+  on_y [
+    label="on_y|{{<in>in}|{<out>out}}"
+  ] ;
+  on_y:out -> skip_y:in ;
+  skip_y [
+    label="skip_y|{{<in>in}|{<out>out|<sync>sync}}"
+  ] ;
+  nn_u:out -> skip_u:in ;
+  skip_u [
+    label="skip_u|{{<in>in}|{<out>out|<sync>sync}}"
+  ] ;
+  skip_y:out -> delay_y:in ;
+  delay_y [
+    label="delay_y|{{<in>in}|{<dout>dout|<sync>sync}}"
+  ] ;
+  skip_u:out -> delay_u:in ;
+  delay_u [
+    label="delay_u|{{<in>in}|{<dout>dout|<sync>sync}}"
+  ] ;
+  delay_u:dout -> bus_p:in1 ;
+  bus_p [
+    label="bus_p|{{<in1>in1|<in2>in2}|{<out>out}}"
+  ] ;
+  delay_y:dout -> bus_p:in2 ;
+  bus_p:out -> nnplant:x ;
+  nnplant [
+    label="nnplant|{{<x>x}|{<y>y}}"
+  ] ;
+  bus_p:out -> nnplant2:x ;
+  nnplant2 [
+    label="nnplant2|{{<x>x}|{<y>y}}"
+  ] ;
+  bus_p:out -> p_in:in ;
+  p_in [
+    label="p_in|{{<in>in}}"
+  ] ;
+  cerrcomp:cmp -> skip_e:in ;
+  skip_e [
+    label="skip_e|{{<in>in}|{<out>out|<sync>sync}}"
+  ] ;
+  skip_e:out -> errbackprop:errout ;
+  errbackprop [
+    label="errbackprop|{{<nnout>nnout|<desout>desout|<errout>errout}|{<errinp>errinp}}"
+  ] ;
+  errbackprop:errinp -> nnp_bpe:in ;
+  nnp_bpe [
+    label="nnp_bpe|{{<in>in}}"
+  ] ;
+  errbackprop:errinp -> errfetch:in ;
+  errfetch [
+    label="errfetch|{{<in>in}|{<out>out}}"
+  ] ;
+  errfetch:out -> nncteacher:errout ;
+  nncteacher [
+    label="nncteacher|{{<nnout>nnout|<desout>desout|<errout>errout}|{<errinp>errinp}}"
+  ] ;
+  on_y:out -> skip_ny:in ;
+  skip_ny [
+    label="skip_ny|{{<in>in}|{<out>out|<sync>sync}}"
+  ] ;
+  skip_ny:out -> iderrcomp:aux ;
+  iderrcomp [
+    label="iderrcomp|{{<main>main|<aux>aux}|{<cmp>cmp}}"
+  ] ;
+  nnplant2:y -> iderrcomp:main ;
+  iderrcomp:cmp -> iderrstat:signal ;
+  iderrstat [
+    label="iderrstat|{{<signal>signal}|{<stat>stat}}"
+  ] ;
+  iderrcomp:cmp -> nnpteacher:errout ;
+  nnpteacher [
+    label="nnpteacher|{{<nnout>nnout|<desout>desout|<errout>errout}|{<errinp>errinp}}"
+  ] ;
+  nnplant2:y -> fill_nn_y:in ;
+  fill_nn_y [
+    label="fill_nn_y|{{<in>in}|{<out>out|<sync>sync}}"
+  ] ;
+  fill_nn_y:out -> nn_y:in ;
+  nn_y [
+    label="nn_y|{{<in>in}}"
+  ] ;
+  on_y:out -> devcomp:aux ;
+  on_y:out -> cerrcomp:aux ;
+  skip_e:out -> cerrstat:signal ;
+  cerrstat [
+    label="cerrstat|{{<signal>signal}|{<stat>stat}}"
+  ] ;
+  cerrstat:stat -> cerr_fout:in ;
+  cerr_fout [
+    label="cerr_fout|{{<in>in}}"
+  ] ;
+  iderrstat:stat -> iderr_fout:in ;
+  iderr_fout [
+    label="iderr_fout|{{<in>in}}"
+  ] ;
+}

@@ -1,0 +1,207 @@
+Logging started.
+name='contr_kind' value='lin' APPEND
+name='input_kind' value='file' APPEND
+name='stream_len' value='1000' APPEND
+name='linplant_tf' value='../007/plant.tf' APPEND
+name='lincontr_tf' value='../002/contr.tf' APPEND
+name='nncontr' value='../007/nnc_res_int.nn' APPEND
+name='nnc_mode' value='e+r+se' APPEND
+name='refer_tf' value='refer.tf' APPEND
+name='noise_tf' value='noise.tf' APPEND
+name='in_r' value='../002/r.dat' APPEND
+name='in_n' value='../002/n.dat' APPEND
+name='out_u' value='u.dat' APPEND
+name='out_e' value='e.dat' APPEND
+name='out_y' value='y.dat' APPEND
+name='out_ny' value='ny.dat' APPEND
+name='out_r' value='r.dat' APPEND
+name='out_n' value='n.dat' APPEND
+name='in_nnp_file' value='../006/nnp_res.nn' APPEND
+name='out_nn_y' value='p.dat' APPEND
+name='out_nn_e' value='d.dat' APPEND
+name='cusum' value='ip.dat' APPEND
+name='sigma0' value='0.15' APPEND
+name='sigma1' value='0.30' APPEND
+name='h_sol' value='1000' APPEND
+name='k_const' value='0.0' APPEND
+name='detect_interval' value='-1' APPEND
+name='comment' value='' APPEND
+Run dcsloop with C:/nn/labworks/Variant1/011/dcsloop_cusum.par
+----------------------------->8----------------------------
+comment=
+contr_kind=lin
+cusum=ip.dat
+detect_interval=-1
+h_sol=1000
+in_n=../002/n.dat
+in_nnp_file=../006/nnp_res.nn
+in_r=../002/r.dat
+input_kind=file
+k_const=0.0
+lincontr_tf=../002/contr.tf
+linplant_tf=../007/plant.tf
+nnc_mode=e+r+se
+nncontr=../007/nnc_res_int.nn
+noise_tf=noise.tf
+out_e=e.dat
+out_n=n.dat
+out_nn_e=d.dat
+out_nn_y=p.dat
+out_ny=ny.dat
+out_r=r.dat
+out_u=u.dat
+out_y=y.dat
+refer_tf=refer.tf
+sigma0=0.15
+sigma1=0.30
+stream_len=1000
+-----------------------------8<----------------------------
+Query for parameter 'contr_kind' gives value 'lin'
+Using linear controller in control system loop
+Query for parameter 'input_kind' gives value 'file'
+Query for parameter 'input_kind' gives value 'file'
+Using limited reference and noise series (data files)
+Query for parameter 'linplant_tf' gives value '../007/plant.tf'
+Open file '../007/plant.tf' for loading configuration data
+Old file format version 1.0 is detected: ok.
+Simple combined function defined; dim in=1 out=1
+Query for parameter 'lincontr_tf' gives value '../002/contr.tf'
+Open file '../002/contr.tf' for loading configuration data
+Old file format version 1.0 is detected: ok.
+Simple combined function defined; dim in=1 out=1
+Query for parameter 'cusum_atad' gives value '?not found'
+Query for parameter 'cusum_start_time' gives value '?not found'
+Run 1 (of 1)
+Digraph output will be put to 'nncp0pn.dot'
+plant TF or COF function
+Cummulative sum detection is ON starting at 0
+Query for parameter 'in_nnp_file' gives value '../006/nnp_res.nn'
+Open file '../006/nnp_res.nn' for loading configuration data
+File format version 1.1 is detected: ok.
+Data stream version 1.1
+delay_u=1,  skip_u=2
+delay_y=2,  skip_y=0
+delay_r=2,  skip_r=3
+Query for parameter 'out_nn_y' gives value 'p.dat'
+Query for parameter 'out_nn_y' gives value 'p.dat'
+Writing NNP identification output to 'p.dat' file.
+Query for parameter 'out_nn_e' gives value 'd.dat'
+Query for parameter 'out_nn_e' gives value 'd.dat'
+Writing NNP identification error to 'd.dat' file.
+ nncp0pn: setpnt_inp.out -> chkpnt_r.in
+ nncp0pn: + setpnt_inp node
+ nncp0pn: + chkpnt_r node
+ nncp0pn: chkpnt_r.out -> cmp.main
+ nncp0pn: + cmp node
+ nncp0pn: cmp.cmp -> chkpnt_e.in
+ nncp0pn: + chkpnt_e node
+ nncp0pn: chkpnt_e.out -> controller.x
+ nncp0pn: + controller node
+ nncp0pn: controller.y -> chkpnt_u.in
+ nncp0pn: + chkpnt_u node
+ nncp0pn: chkpnt_u.out -> plant.x
+ nncp0pn: + plant node
+ nncp0pn: plant.y -> chkpnt_y.in
+ nncp0pn: + chkpnt_y node
+ nncp0pn: chkpnt_y.out -> onsum.main
+ nncp0pn: + onsum node
+ nncp0pn: onsum.sum -> chkpnt_ny.in
+ nncp0pn: + chkpnt_ny node
+ nncp0pn: noise_inp.out -> chkpnt_n.in
+ nncp0pn: + noise_inp node
+ nncp0pn: + chkpnt_n node
+ nncp0pn: chkpnt_ny.out -> cmp.aux
+ nncp0pn: chkpnt_ny.out -> skip_y.in
+ nncp0pn: + skip_y node
+ nncp0pn: chkpnt_u.out -> skip_u.in
+ nncp0pn: + skip_u node
+ nncp0pn: skip_y.out -> delay_y.in
+ nncp0pn: + delay_y node
+ nncp0pn: skip_u.out -> delay_u.in
+ nncp0pn: + delay_u node
+ nncp0pn: delay_u.dout -> bus_p.in1
+ nncp0pn: + bus_p node
+ nncp0pn: delay_y.dout -> bus_p.in2
+ nncp0pn: bus_p.out -> nnplant.x
+ nncp0pn: + nnplant node
+ nncp0pn: nnplant.y -> fill_nn_y.in
+ nncp0pn: + fill_nn_y node
+ nncp0pn: chkpnt_ny.out -> iderrcomp.aux
+ nncp0pn: + iderrcomp node
+ nncp0pn: fill_nn_y.out -> iderrcomp.main
+ nncp0pn: iderrcomp.cmp -> statan_iderr.signal
+ nncp0pn: + statan_iderr node
+ nncp0pn: iderrcomp.cmp -> nn_e.in
+ nncp0pn: + nn_e node
+ nncp0pn: statan_iderr.stat -> iderr_fout.in
+ nncp0pn: + iderr_fout node
+ nncp0pn: fill_nn_y.out -> nn_y.in
+ nncp0pn: + nn_y node
+ nncp0pn: iderrcomp.cmp -> cusum.x
+ nncp0pn: + cusum node
+ nncp0pn: cusum.sum -> cusum_out.in
+ nncp0pn: + cusum_out node
+ nncp0pn: cusum.d -> dodetect.events
+ nncp0pn: + dodetect node
+ nncp0pn: chkpnt_n.out -> onsum.aux
+ nncp0pn: chkpnt_r.out -> cmp_e.main
+ nncp0pn: + cmp_e node
+ nncp0pn: plant.y -> cmp_e.aux
+ nncp0pn: cmp_e.cmp -> statan_cerr.signal
+ nncp0pn: + statan_cerr node
+ nncp0pn: statan_cerr.stat -> cerr_fout.in
+ nncp0pn: + cerr_fout node
+ nncp0pn: chkpnt_r.out -> skip_r.in
+ nncp0pn: + skip_r node
+ nncp0pn: nnplant.y -> nnpback.nnout
+ nncp0pn: + nnpback node
+ nncp0pn: skip_r.out -> nnpback.desout
+ nncp0pn: nnpback.errinp -> nnp_bpe.in
+ nncp0pn: + nnp_bpe node
+ nncp0pn: chkpnt_r.out -> statan_r.signal
+ nncp0pn: + statan_r node
+Query for parameter 'out_r' gives value 'r.dat'
+Query for parameter 'out_e' gives value 'e.dat'
+Query for parameter 'out_u' gives value 'u.dat'
+Query for parameter 'out_n' gives value 'n.dat'
+Query for parameter 'out_y' gives value 'y.dat'
+Query for parameter 'out_ny' gives value 'ny.dat'
+Query for parameter 'cusum' gives value 'ip.dat'
+Query for parameter 'in_r' gives value '../002/r.dat'
+Query for parameter 'in_n' gives value '../002/n.dat'
+Query for parameter 'k_const' gives value '0.0'
+Query for parameter 'h_sol' gives value '1000'
+Query for parameter 'sigma1' gives value '0.30'
+Query for parameter 'sigma0' gives value '0.15'
+Query for parameter 'detect_interval' gives value '-1'
+Timing node 'cmp' (0158BBDC)
+node 'cmp', connector 'cmp' is << STARTER >>
+Text stream input data file '../002/r.dat'
+Text stream input data file '../002/n.dat'
+## pass 1
+## pass 1 ==> total dim 137
+## pass 2
+## pass 2 ==> total dim 139
+## pass 3
+## pass 3 ==> total dim 139
+Text stream output data file 'r.dat'
+Text stream output data file 'e.dat'
+Text stream output data file 'u.dat'
+Text stream output data file 'y.dat'
+Text stream output data file 'ny.dat'
+Text stream output data file 'n.dat'
+Text stream output data file 'd.dat'
+Text stream output data file 'NUL'
+Text stream output data file 'p.dat'
+Text stream output data file 'ip.dat'
+Text stream output data file 'NUL'
+Text stream output data file 'NUL'
+IMPORTANT: net is dead due to data are exhausted.
+Number of disorder detections 0
+Average time of false alarm 1.#INF
+Statistics of set point:
+       Min        Max         Mean     StdDev Dispersion        RMS Volume
+ -0.996643   0.995239   0.00886406   0.564917   0.319131    0.31921 1000
+Statistics of error:
+       Min        Max         Mean     StdDev Dispersion        RMS Volume
+  -1.95368    2.10814   0.00352733   0.814104   0.662766   0.662778 1000

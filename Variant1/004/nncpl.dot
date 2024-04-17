@@ -1,0 +1,54 @@
+digraph nncpl {
+  graph [ rankdir = LR ] ;
+  node [ shape = record ] ;
+
+  in_r:out -> bus3:in1 ;
+  in_r [
+    label="in_r|{{<out>out}}"
+  ] ;
+  bus3 [
+    label="bus3|{{<in1>in1|<in2>in2|<in3>in3}|{<out>out}}"
+  ] ;
+  in_e:out -> bus3:in2 ;
+  in_e [
+    label="in_e|{{<out>out}}"
+  ] ;
+  in_e:out -> err_acc:in ;
+  err_acc [
+    label="err_acc|{{<in>in}|{<sum>sum}}"
+  ] ;
+  err_acc:sum -> bus3:in3 ;
+  bus3:out -> nncontr:x ;
+  nncontr [
+    label="nncontr|{{<x>x}|{<y>y}}"
+  ] ;
+  bus3:out -> nn_x:in ;
+  nn_x [
+    label="nn_x|{{<in>in}}"
+  ] ;
+  nncontr:y -> nnteacher:nnout ;
+  nnteacher [
+    label="nnteacher|{{<nnout>nnout|<desout>desout|<errout>errout}|{<errinp>errinp}}"
+  ] ;
+  in_u:out -> nnteacher:desout ;
+  in_u [
+    label="in_u|{{<out>out}}"
+  ] ;
+  nncontr:y -> errcomp:aux ;
+  errcomp [
+    label="errcomp|{{<main>main|<aux>aux}|{<cmp>cmp}}"
+  ] ;
+  nncontr:y -> nn_u:in ;
+  nn_u [
+    label="nn_u|{{<in>in}}"
+  ] ;
+  in_u:out -> errcomp:main ;
+  errcomp:cmp -> statan:signal ;
+  statan [
+    label="statan|{{<signal>signal}|{<stat>stat}}"
+  ] ;
+  in_r:out -> statan_u:signal ;
+  statan_u [
+    label="statan_u|{{<signal>signal}|{<stat>stat}}"
+  ] ;
+}

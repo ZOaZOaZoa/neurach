@@ -1,0 +1,108 @@
+;NeuCon NeuralNet 1.1
+[NeuralNet Controller]
+; Neural network architecture definition
+1 2	 ; Number of inputs and their repeat factor
+0	 ; Output repeat factor on the input
+0	 ; Feedback depth
+3	 ; Number of hidden layers
+7	 ; Hidden layer
+5	 ; Hidden layer
+3	 ; Hidden layer
+tanh 1	 ; Output layer
+; Input delays:
+0
+1
+; Output delays:
+; Neural network:
+; Layer #0  (2 inputs, 7 neurons)
+0.144467	 ; Neuron #0 (bias / weights):
+-0.0247242
+0.403484
+0.0452099	 ; Neuron #1 (bias / weights):
+-0.00604264
+-0.193397
+0.00248129	 ; Neuron #2 (bias / weights):
+0.142675
+0.313571
+-0.0946903	 ; Neuron #3 (bias / weights):
+0.0665396
+-0.46136
+-0.036681	 ; Neuron #4 (bias / weights):
+0.133541
+0.00436699
+-0.166797	 ; Neuron #5 (bias / weights):
+0.114964
+0.111935
+0.117956	 ; Neuron #6 (bias / weights):
+0.0250097
+0.352343
+; Layer #1  (7 inputs, 5 neurons)
+0.161132	 ; Neuron #0 (bias / weights):
+-0.335943
+-0.0509599
+-0.318649
+0.440409
+0.239768
+-0.0957205
+-0.277926
+-0.0047765	 ; Neuron #1 (bias / weights):
+0.155762
+-0.170237
+0.146797
+-0.00244623
+0.128292
+-0.135538
+0.0988994
+-0.0994707	 ; Neuron #2 (bias / weights):
+0.249631
+0.0262606
+0.147946
+-0.252306
+0.0917898
+0.11669
+0.038694
+0.0920295	 ; Neuron #3 (bias / weights):
+-0.28647
+0.236295
+-0.0484147
+0.37076
+-0.0723101
+-0.0798493
+-0.109071
+0.131555	 ; Neuron #4 (bias / weights):
+-0.387009
+0.304605
+-0.185204
+0.403652
+-0.0975448
+0.0333098
+-0.426113
+; Layer #2  (5 inputs, 3 neurons)
+-0.00180551	 ; Neuron #0 (bias / weights):
+0.612361
+-0.262433
+-0.351172
+0.397304
+0.734009
+-0.0471744	 ; Neuron #1 (bias / weights):
+0.728846
+-0.13616
+-0.342322
+0.506522
+0.72226
+-0.120917	 ; Neuron #2 (bias / weights):
+0.459922
+0.0480717
+-0.0889985
+0.308137
+0.547315
+; Layer #3  (3 inputs, 1 neurons)
+0.00902878	 ; Neuron #0 (bias / weights):
+-2.07447
+-2.30458
+-1.1619
+; Input scaler:
+-1 1	 ; min max
+-1 1	 ; min max
+; Output scaler:
+-1 1	 ; min max

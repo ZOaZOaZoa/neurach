@@ -1,0 +1,126 @@
+Logging started.
+name='contr_kind' value='lin' APPEND
+name='input_kind' value='file' APPEND
+name='stream_len' value='1000' APPEND
+name='linplant_tf' value='plant.tf' APPEND
+name='lincontr_tf' value='contr.tf' APPEND
+name='nncontr' value='nncontr.nn' APPEND
+name='nnc_mode' value='e+r' APPEND
+name='refer_tf' value='refer.tf' APPEND
+name='noise_tf' value='noise.tf' APPEND
+name='in_r' value='refer.dat' APPEND
+name='in_n' value='noise.dat' APPEND
+name='out_u' value='u.dat' APPEND
+name='out_e' value='e.dat' APPEND
+name='out_y' value='y.dat' APPEND
+name='out_ny' value='ny.dat' APPEND
+name='out_r' value='r.dat' APPEND
+name='out_n' value='n.dat' APPEND
+name='comment' value='Подбор параметров объекта и регулятора' APPEND
+Run dcsloop with C:/nn/labworks/Variant1/003/dcsloop.par
+----------------------------->8----------------------------
+comment=Подбор параметров объекта и регулятора
+contr_kind=lin
+in_n=noise.dat
+in_r=refer.dat
+input_kind=file
+lincontr_tf=contr.tf
+linplant_tf=plant.tf
+nnc_mode=e+r
+nncontr=nncontr.nn
+noise_tf=noise.tf
+out_e=e.dat
+out_n=n.dat
+out_ny=ny.dat
+out_r=r.dat
+out_u=u.dat
+out_y=y.dat
+refer_tf=refer.tf
+stream_len=1000
+-----------------------------8<----------------------------
+Query for parameter 'contr_kind' gives value 'lin'
+Using linear controller in control system loop
+Query for parameter 'input_kind' gives value 'file'
+Query for parameter 'input_kind' gives value 'file'
+Using limited reference and noise series (data files)
+Query for parameter 'linplant_tf' gives value 'plant.tf'
+Open file 'plant.tf' for loading configuration data
+Old file format version 1.0 is detected: ok.
+Simple combined function defined; dim in=1 out=1
+Query for parameter 'lincontr_tf' gives value 'contr.tf'
+Open file 'contr.tf' for loading configuration data
+Old file format version 1.0 is detected: ok.
+Simple combined function defined; dim in=1 out=1
+Query for parameter 'cusum_atad' gives value '?not found'
+Query for parameter 'cusum_start_time' gives value '?not found'
+Run 1 (of 1)
+Digraph output will be put to 'nncp0pn.dot'
+plant TF or COF function
+Cummulative sum detection is OFF starting at 0
+ nncp0pn: setpnt_inp.out -> chkpnt_r.in
+ nncp0pn: + setpnt_inp node
+ nncp0pn: + chkpnt_r node
+ nncp0pn: chkpnt_r.out -> cmp.main
+ nncp0pn: + cmp node
+ nncp0pn: cmp.cmp -> chkpnt_e.in
+ nncp0pn: + chkpnt_e node
+ nncp0pn: chkpnt_e.out -> controller.x
+ nncp0pn: + controller node
+ nncp0pn: controller.y -> chkpnt_u.in
+ nncp0pn: + chkpnt_u node
+ nncp0pn: chkpnt_u.out -> plant.x
+ nncp0pn: + plant node
+ nncp0pn: plant.y -> chkpnt_y.in
+ nncp0pn: + chkpnt_y node
+ nncp0pn: chkpnt_y.out -> onsum.main
+ nncp0pn: + onsum node
+ nncp0pn: onsum.sum -> chkpnt_ny.in
+ nncp0pn: + chkpnt_ny node
+ nncp0pn: noise_inp.out -> chkpnt_n.in
+ nncp0pn: + noise_inp node
+ nncp0pn: + chkpnt_n node
+ nncp0pn: chkpnt_ny.out -> cmp.aux
+ nncp0pn: chkpnt_n.out -> onsum.aux
+ nncp0pn: chkpnt_r.out -> cmp_e.main
+ nncp0pn: + cmp_e node
+ nncp0pn: plant.y -> cmp_e.aux
+ nncp0pn: cmp_e.cmp -> statan_cerr.signal
+ nncp0pn: + statan_cerr node
+ nncp0pn: statan_cerr.stat -> cerr_fout.in
+ nncp0pn: + cerr_fout node
+ nncp0pn: chkpnt_r.out -> skip_r.in
+ nncp0pn: + skip_r node
+ nncp0pn: chkpnt_r.out -> statan_r.signal
+ nncp0pn: + statan_r node
+Query for parameter 'out_r' gives value 'r.dat'
+Query for parameter 'out_e' gives value 'e.dat'
+Query for parameter 'out_u' gives value 'u.dat'
+Query for parameter 'out_n' gives value 'n.dat'
+Query for parameter 'out_y' gives value 'y.dat'
+Query for parameter 'out_ny' gives value 'ny.dat'
+Query for parameter 'in_r' gives value 'refer.dat'
+Query for parameter 'in_n' gives value 'noise.dat'
+Timing node 'cmp' (00F8BEE8)
+node 'cmp', connector 'cmp' is << STARTER >>
+Text stream input data file 'refer.dat'
+Text stream input data file 'noise.dat'
+## pass 1
+## pass 1 ==> total dim 60
+## pass 2
+## pass 2 ==> total dim 62
+## pass 3
+## pass 3 ==> total dim 62
+Text stream output data file 'r.dat'
+Text stream output data file 'e.dat'
+Text stream output data file 'u.dat'
+Text stream output data file 'y.dat'
+Text stream output data file 'ny.dat'
+Text stream output data file 'n.dat'
+Text stream output data file 'NUL'
+IMPORTANT: net is dead due to data are exhausted.
+Statistics of set point:
+       Min        Max         Mean     StdDev Dispersion        RMS Volume
+ -0.998962   0.949644   -0.0897617   0.569027   0.323791   0.331849 100
+Statistics of error:
+       Min        Max         Mean     StdDev Dispersion        RMS Volume
+  -1.46376    1.81875  -0.00452098   0.803327   0.645334   0.645355 100

@@ -1,0 +1,65 @@
+digraph nnpe {
+  graph [ rankdir = LR ] ;
+  node [ shape = record ] ;
+
+  in_u:out -> skip_u:in ;
+  in_u [
+    label="in_u|{{<out>out}}"
+  ] ;
+  skip_u [
+    label="skip_u|{{<in>in}|{<out>out|<sync>sync}}"
+  ] ;
+  skip_u:out -> delay_u:in ;
+  delay_u [
+    label="delay_u|{{<in>in}|{<dout>dout|<sync>sync}}"
+  ] ;
+  in_y:out -> skip_y:in ;
+  in_y [
+    label="in_y|{{<out>out}}"
+  ] ;
+  skip_y [
+    label="skip_y|{{<in>in}|{<out>out|<sync>sync}}"
+  ] ;
+  skip_y:out -> delay_y:in ;
+  delay_y [
+    label="delay_y|{{<in>in}|{<dout>dout|<sync>sync}}"
+  ] ;
+  delay_u:dout -> bus:in1 ;
+  bus [
+    label="bus|{{<in1>in1|<in2>in2}|{<out>out}}"
+  ] ;
+  delay_y:dout -> bus:in2 ;
+  bus:out -> nnplant:x ;
+  nnplant [
+    label="nnplant|{{<x>x}|{<y>y}}"
+  ] ;
+  in_y:out -> skip_yt:in ;
+  skip_yt [
+    label="skip_yt|{{<in>in}|{<out>out|<sync>sync}}"
+  ] ;
+  skip_yt:out -> delay_yt:in ;
+  delay_yt [
+    label="delay_yt|{{<in>in}|{<dout>dout|<sync>sync}}"
+  ] ;
+  delay_yt:dout -> statan_y:signal ;
+  statan_y [
+    label="statan_y|{{<signal>signal}|{<stat>stat}}"
+  ] ;
+  delay_yt:dout -> tr_y:in ;
+  tr_y [
+    label="tr_y|{{<in>in}}"
+  ] ;
+  nnplant:y -> nn_y:in ;
+  nn_y [
+    label="nn_y|{{<in>in}}"
+  ] ;
+  nnplant:y -> errcomp:aux ;
+  errcomp [
+    label="errcomp|{{<main>main|<aux>aux}|{<cmp>cmp}}"
+  ] ;
+  delay_yt:dout -> errcomp:main ;
+  errcomp:cmp -> statan:signal ;
+  statan [
+    label="statan|{{<signal>signal}|{<stat>stat}}"
+  ] ;
+}

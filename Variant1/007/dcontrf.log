@@ -1,0 +1,364 @@
+Logging started.
+name='input_kind' value='file' APPEND
+name='stream_len' value='10000' APPEND
+name='nnc_auf' value='100' APPEND
+name='nnc_mode' value='e+r+se' APPEND
+name='linplant_tf' value='plant.tf' APPEND
+name='refer_tf' value='refer.tf' APPEND
+name='noise_tf' value='noise.tf' APPEND
+name='max_epochs' value='1000' APPEND
+name='in_r' value='r.dat' APPEND
+name='in_n' value='n.dat' APPEND
+name='out_r' value='r_out.dat' APPEND
+name='out_n' value='n_out.dat' APPEND
+name='out_u' value='u.dat' APPEND
+name='out_e' value='e.dat' APPEND
+name='out_y' value='y.dat' APPEND
+name='out_nn_y' value='nn_y.dat' APPEND
+name='out_ny' value='ny.dat' APPEND
+name='c_in' value='c_in.dat' APPEND
+name='p_in' value='p_in.dat' APPEND
+name='in_nnp_file' value='../006/nnp_res.nn' APPEND
+name='in_nnc_file' value='../004/nnc_pre_int.nn' APPEND
+name='out_nnc_file' value='nnc_res_int.nn' APPEND
+name='cerr_trace_file' value='cerr_trace.dat' APPEND
+name='iderr_trace_file' value='iderr_trace.dat' APPEND
+name='skip_growing' value='35' APPEND
+name='finish_on_grow' value='35' APPEND
+name='finish_decrease' value='1e-6' APPEND
+name='eta' value='0.00008' APPEND
+name='eta_output' value='0.0008' APPEND
+name='alpha' value='0.00001' APPEND
+name='comment' value='' APPEND
+name='rtseries_yMin' value='0.001' APPEND
+name='rtseries_yMax' value='1' APPEND
+Run dcontrf with C:/nn/labworks/Variant1/007/dcontrf.par
+----------------------------->8----------------------------
+alpha=0.00001
+c_in=c_in.dat
+cerr_trace_file=cerr_trace.dat
+comment=
+eta=0.00008
+eta_output=0.0008
+finish_decrease=1e-6
+finish_on_grow=35
+iderr_trace_file=iderr_trace.dat
+in_n=n.dat
+in_nnc_file=../004/nnc_pre_int.nn
+in_nnp_file=../006/nnp_res.nn
+in_r=r.dat
+input_kind=file
+linplant_tf=plant.tf
+max_epochs=1000
+nnc_auf=100
+nnc_mode=e+r+se
+noise_tf=noise.tf
+out_e=e.dat
+out_n=n_out.dat
+out_nn_y=nn_y.dat
+out_nnc_file=nnc_res_int.nn
+out_ny=ny.dat
+out_r=r_out.dat
+out_u=u.dat
+out_y=y.dat
+p_in=p_in.dat
+refer_tf=refer.tf
+rtseries_yMax=1
+rtseries_yMin=0.001
+skip_growing=35
+stream_len=10000
+-----------------------------8<----------------------------
+Query for parameter 'input_kind' gives value 'file'
+Query for parameter 'input_kind' gives value 'file'
+Using limited reference and noise series (data files)
+Query for parameter 'linplant_tf' gives value 'plant.tf'
+Open file 'plant.tf' for loading configuration data
+Old file format version 1.0 is detected: ok.
+Simple combined function defined; dim in=1 out=1
+Query for parameter 'in_nnp_file' gives value '../006/nnp_res.nn'
+Open file '../006/nnp_res.nn' for loading configuration data
+File format version 1.1 is detected: ok.
+Data stream version 1.1
+Query for parameter 'nnc_mode' gives value 'e+r+se'
+Query for parameter 'in_nnc_file' gives value '../004/nnc_pre_int.nn'
+Open file '../004/nnc_pre_int.nn' for loading configuration data
+File format version 1.1 is detected: ok.
+Data stream version 1.1
+Digraph output will be put to 'nncfl.dot'
+delay_u=1,  skip_u=2
+delay_y=2,  skip_y=0
+delay_e=2,  skip_e=3
+NaNNUnit(this=0118F58C):
+  includes NaNeuralNetDescr(this=0118F5B0):
+  inputs=1  outputs=1  in.repeat=3  out.repeat=0  feedback=0
+  linear last layer activation function
+  hidden layers 1 total:
+  * layer #0 has 8 neurons
+  Input delays:
+  * input #0 delayed by 0
+  * input #1 delayed by 1
+  * input #2 delayed by 2
+  Output delays:
+NaUnit(this=0118F58C): InputDim=3 OutputDim=1 FeedbackDepth=0
++ Timer(74A16B08, dT=1 s): T=0 s, I=0
+  network has the next tunable parameters:
+  * layer #0 (3 inputs, 8 neurons)
+    * neuron #0 (bias / weights)
+       +1.436 /	-0.004	-1.066	-0.192
+    * neuron #1 (bias / weights)
+       +1.487 /	+0.001	+1.071	+0.185
+    * neuron #2 (bias / weights)
+       -0.552 /	-0.008	+9.403	+5.053
+    * neuron #3 (bias / weights)
+       -0.044 /	-0.001	+0.735	+0.054
+    * neuron #4 (bias / weights)
+       +0.558 /	+0.068	-9.366	-5.197
+    * neuron #5 (bias / weights)
+       -0.601 /	-0.214	+6.398	+3.468
+    * neuron #6 (bias / weights)
+       -0.430 /	-0.063	+6.095	+3.322
+    * neuron #7 (bias / weights)
+       -0.614 /	-0.240	+8.616	+4.443
+  * layer #1 (8 inputs, 1 neurons)
+    * neuron #0 (bias / weights)
+       -0.106 /	-1.905	+2.125	-0.515	+2.624	+0.085	-0.582	+0.992	+0.312
+  defined scale for output layer:
+    * neuron #0	min=-1	max=1
+default errfetch_output=1
+Query for parameter 'c_in' gives value 'c_in.dat'
+Query for parameter 'p_in' gives value 'p_in.dat'
+Query for parameter 'in_r' gives value 'r.dat'
+Query for parameter 'in_n' gives value 'n.dat'
+Query for parameter 'cerr_trace_file' gives value 'cerr_trace.dat'
+Writing control error statistics to 'cerr_trace.dat' file.
+Query for parameter 'cerr_trace_file' gives value 'cerr_trace.dat'
+Query for parameter 'iderr_trace_file' gives value 'iderr_trace.dat'
+Writing identification error statistics to 'iderr_trace.dat' file.
+Query for parameter 'iderr_trace_file' gives value 'iderr_trace.dat'
+Query for parameter 'out_u' gives value 'u.dat'
+Query for parameter 'out_u' gives value 'u.dat'
+Writing NNC control force to 'u.dat' file.
+Query for parameter 'out_nn_y' gives value 'nn_y.dat'
+Query for parameter 'out_nn_y' gives value 'nn_y.dat'
+Writing NNP identification output to 'nn_y.dat' file.
+Query for parameter 'out_ny' gives value 'ny.dat'
+Query for parameter 'out_ny' gives value 'ny.dat'
+Writing plant + noise observation output to 'ny.dat' file.
+ nncfl: setpnt_inp.out -> bus3_c.in1
+ nncfl: + setpnt_inp node
+ nncfl: + bus3_c node
+ nncfl: setpnt_inp.out -> skip_r.in
+ nncfl: + skip_r node
+ nncfl: setpnt_inp.out -> cerrcomp.main
+ nncfl: + cerrcomp node
+ nncfl: skip_r.out -> devcomp.main
+ nncfl: + devcomp node
+ nncfl: devcomp.cmp -> bus3_c.in2
+ nncfl: devcomp.cmp -> err_acc.in
+ nncfl: + err_acc node
+ nncfl: err_acc.sum -> bus3_c.in3
+ nncfl: bus3_c.out -> nncontr.x
+ nncfl: + nncontr node
+ nncfl: bus3_c.out -> c_in.in
+ nncfl: + c_in node
+ nncfl: nncontr.y -> nn_u.in
+ nncfl: + nn_u node
+ nncfl: nn_u.out -> plant.x
+ nncfl: + plant node
+ nncfl: plant.y -> sum_on.main
+ nncfl: + sum_on node
+ nncfl: noise_inp.out -> sum_on.aux
+ nncfl: + noise_inp node
+ nncfl: sum_on.sum -> on_y.in
+ nncfl: + on_y node
+ nncfl: on_y.out -> skip_y.in
+ nncfl: + skip_y node
+ nncfl: nn_u.out -> skip_u.in
+ nncfl: + skip_u node
+ nncfl: skip_y.out -> delay_y.in
+ nncfl: + delay_y node
+ nncfl: skip_u.out -> delay_u.in
+ nncfl: + delay_u node
+ nncfl: delay_u.dout -> bus_p.in1
+ nncfl: + bus_p node
+ nncfl: delay_y.dout -> bus_p.in2
+ nncfl: bus_p.out -> nnplant.x
+ nncfl: + nnplant node
+ nncfl: bus_p.out -> nnplant2.x
+ nncfl: + nnplant2 node
+ nncfl: bus_p.out -> p_in.in
+ nncfl: + p_in node
+ nncfl: cerrcomp.cmp -> skip_e.in
+ nncfl: + skip_e node
+ nncfl: skip_e.out -> errbackprop.errout
+ nncfl: + errbackprop node
+ nncfl: errbackprop.errinp -> nnp_bpe.in
+ nncfl: + nnp_bpe node
+ nncfl: errbackprop.errinp -> errfetch.in
+ nncfl: + errfetch node
+ nncfl: errfetch.out -> nncteacher.errout
+ nncfl: + nncteacher node
+ nncfl: on_y.out -> skip_ny.in
+ nncfl: + skip_ny node
+ nncfl: skip_ny.out -> iderrcomp.aux
+ nncfl: + iderrcomp node
+ nncfl: nnplant2.y -> iderrcomp.main
+ nncfl: iderrcomp.cmp -> iderrstat.signal
+ nncfl: + iderrstat node
+ nncfl: iderrcomp.cmp -> nnpteacher.errout
+ nncfl: + nnpteacher node
+ nncfl: nnplant2.y -> fill_nn_y.in
+ nncfl: + fill_nn_y node
+ nncfl: fill_nn_y.out -> nn_y.in
+ nncfl: + nn_y node
+ nncfl: on_y.out -> devcomp.aux
+ nncfl: on_y.out -> cerrcomp.aux
+ nncfl: skip_e.out -> cerrstat.signal
+ nncfl: + cerrstat node
+ nncfl: cerrstat.stat -> cerr_fout.in
+ nncfl: + cerr_fout node
+ nncfl: iderrstat.stat -> iderr_fout.in
+ nncfl: + iderr_fout node
+Query for parameter 'finish_decrease' gives value '1e-6'
+Query for parameter 'skip_growing' gives value '35'
+Query for parameter 'finish_on_grow' gives value '35'
+Query for parameter 'eta' gives value '0.00008'
+Query for parameter 'eta_output' gives value '0.0008'
+Query for parameter 'alpha' gives value '0.00001'
+Query for parameter 'p_eta' gives value '?not found'
+Query for parameter 'p_eta_output' gives value '?not found'
+Query for parameter 'p_alpha' gives value '?not found'
+Depth of error accumulation is 0
+Query for parameter 'max_epochs' gives value '1000'
+Query for parameter 'eta_scale_by_auf' gives value '?not found'
+Query for parameter 'nnc_auf' gives value '100'
+Query for parameter 'nnp_auf' gives value '?not found'
+Autoupdate frequency for NNC is 100
+Timing node 'setpnt_inp' (0118BF7C)
+node 'devcomp', connector 'cmp' is << STARTER >>
+Text stream input data file 'r.dat'
+Text stream input data file 'n.dat'
+## pass 1
+## pass 1 ==> total dim 153
+## pass 2
+## pass 2 ==> total dim 159
+## pass 3
+## pass 3 ==> total dim 159
+Text stream output data file 'c_in.dat'
+Text stream output data file 'u.dat'
+Text stream output data file 'ny.dat'
+Text stream output data file 'p_in.dat'
+Text stream output data file 'NUL'
+Text stream output data file 'nn_y.dat'
+Text stream output data file 'cerr_trace.dat'
+Text stream output data file 'iderr_trace.dat'
+nncteacher: Automatic update #0 of NN 'Controller' (99 sample)
+nncteacher: Automatic update #1 of NN 'Controller' (199 sample)
+nncteacher: Automatic update #2 of NN 'Controller' (299 sample)
+nncteacher: Automatic update #3 of NN 'Controller' (399 sample)
+nncteacher: Automatic update #4 of NN 'Controller' (499 sample)
+nncteacher: Automatic update #5 of NN 'Controller' (599 sample)
+nncteacher: Automatic update #6 of NN 'Controller' (699 sample)
+nncteacher: Automatic update #7 of NN 'Controller' (799 sample)
+nncteacher: Automatic update #8 of NN 'Controller' (899 sample)
+nncteacher: Automatic update #9 of NN 'Controller' (999 sample)
+nncteacher: Automatic update #10 of NN 'Controller' (1099 sample)
+nncteacher: Automatic update #11 of NN 'Controller' (1199 sample)
+nncteacher: Automatic update #12 of NN 'Controller' (1299 sample)
+nncteacher: Automatic update #13 of NN 'Controller' (1399 sample)
+nncteacher: Automatic update #14 of NN 'Controller' (1499 sample)
+nncteacher: Automatic update #15 of NN 'Controller' (1599 sample)
+nncteacher: Automatic update #16 of NN 'Controller' (1699 sample)
+nncteacher: Automatic update #17 of NN 'Controller' (1799 sample)
+nncteacher: Automatic update #18 of NN 'Controller' (1899 sample)
+nncteacher: Automatic update #19 of NN 'Controller' (1999 sample)
+nncteacher: Automatic update #20 of NN 'Controller' (2099 sample)
+nncteacher: Automatic update #21 of NN 'Controller' (2199 sample)
+nncteacher: Automatic update #22 of NN 'Controller' (2299 sample)
+nncteacher: Automatic update #23 of NN 'Controller' (2399 sample)
+nncteacher: Automatic update #24 of NN 'Controller' (2499 sample)
+nncteacher: Automatic update #25 of NN 'Controller' (2599 sample)
+nncteacher: Automatic update #26 of NN 'Controller' (2699 sample)
+nncteacher: Automatic update #27 of NN 'Controller' (2799 sample)
+nncteacher: Automatic update #28 of NN 'Controller' (2899 sample)
+nncteacher: Automatic update #29 of NN 'Controller' (2999 sample)
+nncteacher: Automatic update #30 of NN 'Controller' (3099 sample)
+nncteacher: Automatic update #31 of NN 'Controller' (3199 sample)
+nncteacher: Automatic update #32 of NN 'Controller' (3299 sample)
+nncteacher: Automatic update #33 of NN 'Controller' (3399 sample)
+nncteacher: Automatic update #34 of NN 'Controller' (3499 sample)
+nncteacher: Automatic update #35 of NN 'Controller' (3599 sample)
+nncteacher: Automatic update #36 of NN 'Controller' (3699 sample)
+nncteacher: Automatic update #37 of NN 'Controller' (3799 sample)
+nncteacher: Automatic update #38 of NN 'Controller' (3899 sample)
+nncteacher: Automatic update #39 of NN 'Controller' (3999 sample)
+nncteacher: Automatic update #40 of NN 'Controller' (4099 sample)
+nncteacher: Automatic update #41 of NN 'Controller' (4199 sample)
+nncteacher: Automatic update #42 of NN 'Controller' (4299 sample)
+nncteacher: Automatic update #43 of NN 'Controller' (4399 sample)
+nncteacher: Automatic update #44 of NN 'Controller' (4499 sample)
+nncteacher: Automatic update #45 of NN 'Controller' (4599 sample)
+nncteacher: Automatic update #46 of NN 'Controller' (4699 sample)
+nncteacher: Automatic update #47 of NN 'Controller' (4799 sample)
+nncteacher: Automatic update #48 of NN 'Controller' (4899 sample)
+nncteacher: Automatic update #49 of NN 'Controller' (4999 sample)
+nncteacher: Automatic update #50 of NN 'Controller' (5099 sample)
+nncteacher: Automatic update #51 of NN 'Controller' (5199 sample)
+nncteacher: Automatic update #52 of NN 'Controller' (5299 sample)
+nncteacher: Automatic update #53 of NN 'Controller' (5399 sample)
+nncteacher: Automatic update #54 of NN 'Controller' (5499 sample)
+nncteacher: Automatic update #55 of NN 'Controller' (5599 sample)
+nncteacher: Automatic update #56 of NN 'Controller' (5699 sample)
+nncteacher: Automatic update #57 of NN 'Controller' (5799 sample)
+nncteacher: Automatic update #58 of NN 'Controller' (5899 sample)
+nncteacher: Automatic update #59 of NN 'Controller' (5999 sample)
+nncteacher: Automatic update #60 of NN 'Controller' (6099 sample)
+nncteacher: Automatic update #61 of NN 'Controller' (6199 sample)
+nncteacher: Automatic update #62 of NN 'Controller' (6299 sample)
+nncteacher: Automatic update #63 of NN 'Controller' (6399 sample)
+nncteacher: Automatic update #64 of NN 'Controller' (6499 sample)
+nncteacher: Automatic update #65 of NN 'Controller' (6599 sample)
+nncteacher: Automatic update #66 of NN 'Controller' (6699 sample)
+nncteacher: Automatic update #67 of NN 'Controller' (6799 sample)
+nncteacher: Automatic update #68 of NN 'Controller' (6899 sample)
+nncteacher: Automatic update #69 of NN 'Controller' (6999 sample)
+nncteacher: Automatic update #70 of NN 'Controller' (7099 sample)
+nncteacher: Automatic update #71 of NN 'Controller' (7199 sample)
+nncteacher: Automatic update #72 of NN 'Controller' (7299 sample)
+nncteacher: Automatic update #73 of NN 'Controller' (7399 sample)
+nncteacher: Automatic update #74 of NN 'Controller' (7499 sample)
+nncteacher: Automatic update #75 of NN 'Controller' (7599 sample)
+nncteacher: Automatic update #76 of NN 'Controller' (7699 sample)
+nncteacher: Automatic update #77 of NN 'Controller' (7799 sample)
+nncteacher: Automatic update #78 of NN 'Controller' (7899 sample)
+nncteacher: Automatic update #79 of NN 'Controller' (7999 sample)
+nncteacher: Automatic update #80 of NN 'Controller' (8099 sample)
+nncteacher: Automatic update #81 of NN 'Controller' (8199 sample)
+nncteacher: Automatic update #82 of NN 'Controller' (8299 sample)
+nncteacher: Automatic update #83 of NN 'Controller' (8399 sample)
+nncteacher: Automatic update #84 of NN 'Controller' (8499 sample)
+nncteacher: Automatic update #85 of NN 'Controller' (8599 sample)
+nncteacher: Automatic update #86 of NN 'Controller' (8699 sample)
+nncteacher: Automatic update #87 of NN 'Controller' (8799 sample)
+nncteacher: Automatic update #88 of NN 'Controller' (8899 sample)
+nncteacher: Automatic update #89 of NN 'Controller' (8999 sample)
+nncteacher: Automatic update #90 of NN 'Controller' (9099 sample)
+nncteacher: Automatic update #91 of NN 'Controller' (9199 sample)
+nncteacher: Automatic update #92 of NN 'Controller' (9299 sample)
+nncteacher: Automatic update #93 of NN 'Controller' (9399 sample)
+nncteacher: Automatic update #94 of NN 'Controller' (9499 sample)
+nncteacher: Automatic update #95 of NN 'Controller' (9599 sample)
+nncteacher: Automatic update #96 of NN 'Controller' (9699 sample)
+nncteacher: Automatic update #97 of NN 'Controller' (9799 sample)
+nncteacher: Automatic update #98 of NN 'Controller' (9899 sample)
+Statistics of node 'iderrstat':
+       Min        Max         Mean     StdDev Dispersion        RMS Volume
+   -2.0674    2.07538 -0.000251755   0.868986   0.755137   0.755137 9996
+Statistics of node 'cerrstat':
+       Min        Max         Mean     StdDev Dispersion        RMS Volume
+ -0.392701   0.413912  0.000227301   0.115658  0.0133767  0.0133767 9996
+IMPORTANT: net is dead due to data are exhausted.
+Query for parameter 'out_nnc_file' gives value 'nnc_res_int.nn'
+Open file 'nnc_res_int.nn' for saving configuration data
+Saving NeuralNet (instance Controller)
+Close file 'nnc_res_int.nn'

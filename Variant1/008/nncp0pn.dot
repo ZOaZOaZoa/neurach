@@ -1,0 +1,83 @@
+digraph nncp0pn {
+  graph [ rankdir = LR ] ;
+  node [ shape = record ] ;
+
+  setpnt_inp:out -> chkpnt_r:in ;
+  setpnt_inp [
+    label="setpnt_inp|{{<out>out}}"
+  ] ;
+  chkpnt_r [
+    label="chkpnt_r|{{<in>in}|{<out>out}}"
+  ] ;
+  chkpnt_r:out -> cmp:main ;
+  cmp [
+    label="cmp|{{<main>main|<aux>aux}|{<cmp>cmp}}"
+  ] ;
+  cmp:cmp -> chkpnt_e:in ;
+  chkpnt_e [
+    label="chkpnt_e|{{<in>in}|{<out>out}}"
+  ] ;
+  chkpnt_r:out -> bus2:in1 ;
+  bus2 [
+    label="bus2|{{<in1>in1|<in2>in2}|{<out>out}}"
+  ] ;
+  chkpnt_e:out -> bus2:in2 ;
+  bus2:out -> controller:x ;
+  controller [
+    label="controller|{{<x>x|<time>time}|{<y>y}}"
+  ] ;
+  bus2:out -> nn_x:in ;
+  nn_x [
+    label="nn_x|{{<in>in}}"
+  ] ;
+  controller:y -> chkpnt_u:in ;
+  chkpnt_u [
+    label="chkpnt_u|{{<in>in}|{<out>out}}"
+  ] ;
+  chkpnt_u:out -> plant:x ;
+  plant [
+    label="plant|{{<x>x|<time>time}|{<y>y}}"
+  ] ;
+  plant:y -> chkpnt_y:in ;
+  chkpnt_y [
+    label="chkpnt_y|{{<in>in}|{<out>out}}"
+  ] ;
+  chkpnt_y:out -> onsum:main ;
+  onsum [
+    label="onsum|{{<main>main|<aux>aux}|{<sum>sum}}"
+  ] ;
+  onsum:sum -> chkpnt_ny:in ;
+  chkpnt_ny [
+    label="chkpnt_ny|{{<in>in}|{<out>out}}"
+  ] ;
+  noise_inp:out -> chkpnt_n:in ;
+  noise_inp [
+    label="noise_inp|{{<out>out}}"
+  ] ;
+  chkpnt_n [
+    label="chkpnt_n|{{<in>in}|{<out>out}}"
+  ] ;
+  chkpnt_ny:out -> cmp:aux ;
+  chkpnt_n:out -> onsum:aux ;
+  chkpnt_r:out -> cmp_e:main ;
+  cmp_e [
+    label="cmp_e|{{<main>main|<aux>aux}|{<cmp>cmp}}"
+  ] ;
+  plant:y -> cmp_e:aux ;
+  cmp_e:cmp -> statan_cerr:signal ;
+  statan_cerr [
+    label="statan_cerr|{{<signal>signal}|{<stat>stat}}"
+  ] ;
+  statan_cerr:stat -> cerr_fout:in ;
+  cerr_fout [
+    label="cerr_fout|{{<in>in}}"
+  ] ;
+  chkpnt_r:out -> skip_r:in ;
+  skip_r [
+    label="skip_r|{{<in>in}|{<out>out|<sync>sync}}"
+  ] ;
+  chkpnt_r:out -> statan_r:signal ;
+  statan_r [
+    label="statan_r|{{<signal>signal}|{<stat>stat}}"
+  ] ;
+}

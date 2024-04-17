@@ -1,0 +1,13 @@
+Logging started.
+Digraph output will be put to 'statan.dot'
+ statan: series1.out -> statistics.signal
+ statan: + series1 node
+ statan: + statistics node
+Text stream input data file 'C:/nn/labworks/Variant1/002/r.dat'
+## pass 1
+## pass 1 ==> total dim 10
+## pass 2
+## pass 2 ==> total dim 10
+Node 'series1': source data file 'C:/nn/labworks/Variant1/002/r.dat' is empty.
+Node 'series1' verification failed!
+IMPORTANT: verification failed!
